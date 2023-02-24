@@ -1,6 +1,19 @@
-body{
+:root {
+    --fonte-padrao: 'Inter';
+    --azul-dnc: #0c70f2;
+    --predo-dnc: #303030;
+    --cinza-hover: #c9c9c9;
+}
+
+body {
+    /*Margem externa*/
     margin: 0%;
+    /*Margem interna*/
     padding: 0px;
+    /*Background body*/
+    background: linear-gradient(180deg, rgba(12, 112, 242, 0.5) 19.91%, rgba(12, 112, 242, 0) 24.84%), #303030;
+    background-repeat: no-repeat;
+
 }
 
 #principal {
@@ -39,7 +52,7 @@ body{
 }
 
 #principal button {
-    background: #0C70F2;
+    background: var(--azul-dnc);
     /* sombra do button*/
     box-shadow: 3px 2px 4px rgba(12, 112, 242, 0.25);
     font-family: 'Inter';
@@ -54,4 +67,242 @@ body{
     left: 1245px;
     top: 31px;
     cursor: pointer;
+}
+
+/*Secao principal do site*/
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+header {
+    font-family: var(--fonte-padrao);
+    color: #FFFFFF;
+}
+
+header h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 97px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+header .invert {
+    background-color: black;
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+form {
+    font-family: var(--fonte-padrao);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 30px;
+    width: 600px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+form input {
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+form label {
+    margin: 10px 0px 10px  0px;
+}
+
+form input::placeholder {
+    color: rgba(57, 57, 57, 0.5);
+}
+
+.checkbox-itens label{
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.checkbox-itens {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.7);
+}
+
+input[type="submit"] {
+    margin-top: 82px;
+    width: 100%;
+    height: 56px;
+    background: rgba(12, 112, 242, 0.9);
+    box-shadow: 0px 6px 4px rgba(12, 112, 242, 0.25);
+    font-weight: 600;
+    font-size: 32px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--azul-dnc);
+    color: white;
+}
+
+footer nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 330px;
+}
+
+footer .linha1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--fonte-padrao);
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px; 
+}
+
+footer ul li {
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+
+    margin: 20px 0px;
+}
+
+footer h5 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 18px;
+    font-family: var(--fonte-padrao);
+    background-color: var(--predo-dnc);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: var(--cinza-hover);
+}
+
+footer .endereco{
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--fonte-padrao);
+    color: white;
+    text-align: center;
+    width: 22%;
+}
+
+footer .linha2 {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 15px;
+    height: 35px;
+}
+
+footer .linha2 a {
+    font-size: 18px;
+    font-family: var(--fonte-padrao);
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+footer.linha2 a:hover {
+    color: var(--cinza-hover);
+}
+
+/*criando um borde so para o primeiro child*/
+footer .linha2 a:first-child {
+    border-right: 3px solid white;
+}
+
+@media only screen and (max-width: 600px){
+    /*Menu*/
+    #principal {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    #menu {
+        flex-direction: column;
+        width: 100%;
+        margin: 0px;
+    }
+
+    #menu a {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #principal button {
+        width: 100%;
+        margin: 0px;
+    }
+
+    /*Section*/
+    section h1 {
+        font-size: 35px;
+    }
+
+    section h2 {
+        font-size: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    form {
+        width: 95%;
+        font-size: 20px;
+    }
+
+    .checkbox-itens label{
+        font-size: 17px;
+    }
 }
